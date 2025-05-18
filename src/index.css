@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@keyframes glow {
+  0%, 100% { opacity: 0.8; filter: brightness(1); }
+  50% { opacity: 1; filter: brightness(1.2); }
+}
+
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes borderGlow {
+  0%, 100% { 
+    box-shadow: 0 0 5px rgba(216, 255, 255, 0.5),
+                0 0 10px rgba(216, 255, 255, 0.3);
+  }
+  50% { 
+    box-shadow: 0 0 10px rgba(216, 255, 255, 0.7),
+                0 0 20px rgba(216, 255, 255, 0.5);
+  }
+}
+
+body::-webkit-scrollbar {
+  background-color: transparent;
+  width:0.2vw
+}
+body::-webkit-scrollbar-track {
+  background-color:transparent
+}body::-webkit-scrollbar-track:hover {
+  background-color:transparent
+}
+body::-webkit-scrollbar-thumb {
+  background-color:#ebfcfc;
+  border-radius:16px;
+  border:5px solid transparent
+}body::-webkit-scrollbar-thumb:hover {
+  background-color:#ebfcfc;
+}
+body::-webkit-scrollbar-button {display:none}
+
+.timesfont {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+#statuswindow *{
+  color: #ebfcfc;
+  text-shadow: 0 0 10px rgb(216, 255, 255);
+}
+
+.system-frame {
+  position: relative;
+  padding: 2px;
+  --frame-color: #bcffff;
+}
+
+.system-frame::before{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.system-frame::before {
+  top: -2px;
+  left: -2px;
+  border: 2px solid var(--frame-color);
+  border-radius: 4px;
+  box-shadow: 0 0 15px rgba(216, 255, 255, 0.5);
+}
+
+.system-frame::after {
+  pointer-events: none;
+  content: '';
+  position: absolute;
+  inset: -15px;
+  background: 
+    linear-gradient(to right, var(--frame-color) 2px, transparent 2px) 0 0,
+    linear-gradient(to right, var(--frame-color) 2px, transparent 2px) 0 100%,
+    linear-gradient(to left, var(--frame-color) 2px, transparent 2px) 100% 0,
+    linear-gradient(to left, var(--frame-color) 2px, transparent 2px) 100% 100%,
+    linear-gradient(to bottom, var(--frame-color) 2px, transparent 2px) 0 0,
+    linear-gradient(to bottom, var(--frame-color) 2px, transparent 2px) 100% 0,
+    linear-gradient(to top, var(--frame-color) 2px, transparent 2px) 0 100%,
+    linear-gradient(to top, var(--frame-color) 2px, transparent 2px) 100% 100%;
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+}
+
+
+.cyan-frame {
+  position: relative;
+  padding: 2px;
+  --frame-color: #bcffff;
+}
+
+.cyan-frame::before{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  border: 2px solid var(--frame-color);
+  border-radius: 4px;
+  box-shadow: 0 0 15px rgba(216, 255, 255, 0.5);
+}
+
+
+.status-window {
+  background: rgba(10, 15, 36, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(216, 255, 255, 0.3);
+  position: relative;
+}
+
+.status-window::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    linear-gradient(90deg, 
+      transparent 0%, 
+      rgba(216, 255, 255, 0.1) 50%,
+      transparent 100%
+    );
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.status-title {
+  position: relative;
+  text-align: center;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(216, 255, 255, 0.3);
+  background: rgba(10, 15, 36, 0.8);
+}
+
+.status-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #bcffff,
+    transparent
+  );
+}
+.neon-text {
+  color: #bcffff;
+  text-shadow: 
+    0 0 5px rgba(216, 255, 255, 0.5),
+    0 0 10px rgba(216, 255, 255, 0.3);
+}
+
+.notification-frame {
+  position: relative;
+  padding: 2px;
+}
+
+.notification-frame::before,
+.notification-frame::after {
+  content: '';
+  position: absolute;
+  background: #bcffff;
+  box-shadow: 0 0 15px rgba(216, 255, 255, 0.5);
+}
+
+.notification-frame::before {
+  top: 0;
+  left: 20%;
+  right: 20%;
+  height: 2px;
+}
+.glitch { 
+  font-family: 'Rubik Glitch';
+  font-weight: 100;
+}
+
+.notification-frame::after {
+  bottom: 0;
+  left: 20%;
+  right: 20%;
+  height: 2px;
+}
+
+body {
+  background-color: #0a0e17;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+}
+
+
+.scrollgallery::-webkit-scrollbar {
+  display: none;
+}
+
