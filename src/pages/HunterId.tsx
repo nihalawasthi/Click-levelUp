@@ -71,11 +71,11 @@ export default function HunterId() {
                             </div>
 
                             {/* Dynamic Text Content */}
-                            <div className="absolute h-[60%] z-20 left-16 top-1/2 transform -translate-y-1/2 text-cyan-100">
+                            <div className="absolute text-left h-[60%] z-20 left-16 top-1/2 transform -translate-y-1/2 text-cyan-100">
                                 <div className="mt-10 mb-2">
-                                    <h2 className="text-5xl font-bold italic tracking-wider">
+                                    <h2 className="text-3xl font-bold italic tracking-wider">
                                         <span className="inline-block">
-                                            <span className="text-4xl glitch">{user_rank} </span>
+                                            <span className="text-3xl glitch">{user_rank} </span>
                                             <span className="text-lg glitch">RANK</span>
                                         </span>
                                     </h2>
@@ -84,17 +84,17 @@ export default function HunterId() {
                                     <p className="text-lg tracking-wide text-[#505050]">{"No Title"}</p>
                                 </div>
                                 <div>
-                                    <h1 className="text-5xl tracking-tight mb-1 glitch">{username || "Player"}</h1>
-                                    <p className="text-3xl text-[#505050] mt-2">( {kname} )</p>
+                                    <h1 className="text-3xl tracking-tight mb-1 glitch">{username || "Player"}</h1>
+                                    <p className="text-xl text-[#505050] mt-2">( {kname} )</p>
                                 </div>
-                                <div className="mt-5 bottom-0 w-[450px] h-[280px]">
-                                    <p className="text-lg tracking-wide"><span className="text-[#505050]">Gender : </span>{Gender}</p>
-                                    <p className="text-lg tracking-wide"><span className="text-[#505050]">Registration Date : </span> {joined_at?.split("T")[0] ?? "Unknown Date"}</p>
+                                <div className="mt-2 bottom-0 w-[450px] h-[280px]">
+                                    <p className="text-md tracking-wide"><span className="text-[#505050]">Gender : </span>{Gender}</p>
+                                    <p className="text-md tracking-wide"><span className="text-[#505050]">Registration Date : </span> {joined_at?.split("T")[0] ?? "Unknown Date"}</p>
                                 </div>
                             </div>
 
-                            <div className="mt-10 bottom-10 w-1/4 absolute left-10 text-center">
-                                <p className="text-4xl tracking-wide text-[#505050]">{hunterid}</p>
+                            <div className="mt-10 bottom-5 w-1/4 absolute left-0 text-center">
+                                <p className="text-lg tracking-wide text-[#505050]">{hunterid}</p>
                             </div>
                         </div>
                     </div>
