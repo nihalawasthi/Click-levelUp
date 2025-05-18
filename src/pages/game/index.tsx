@@ -461,11 +461,9 @@ export default function GamePage() {
     sounds: {
       click: "/sounds/click.mp3",
       upgrade: "/sounds/upgrade.mp3",
-      achievement: "/sounds/achievement.mp3",
       rankUp: "/sounds/rank-up.mp3",
       ability: "/sounds/ability.mp3",
       critical: "/sounds/critical.mp3",
-      prestige: "/sounds/prestige.mp3",
     },
   })
 
@@ -1020,7 +1018,6 @@ export default function GamePage() {
 
         // Show notification
         addNotification(`Achievement Unlocked: ${achievement.name}! +${achievement.reward} XP`, "achievement")
-        playSound("achievement")
       }
     })
   }, [stats, rank, totalXp, achievements])
@@ -1393,9 +1390,6 @@ export default function GamePage() {
       "prestige",
     )
     setShowPrestigeConfirm(false)
-
-    // Play sound
-    playSound("prestige")
 
     // Save game
     localStorage.setItem("user_rank", "F")
