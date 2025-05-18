@@ -45,11 +45,11 @@ export default function HunterId() {
     if (!mounted) return null
 
     return (
-        <div className="w-full h-screen">
+        <div className="w-full h-screen overflow-hidden">
             <BackGround />
 
-            <div className="w-full h-screen glitch">
-                <div className="w-full h-screen flex items-center justify-center absolute inset-0 bg-black bg-opacity-80">
+            <div className="w-full h-screen glitch bg-transparent flex items-center justify-center absolute inset-0">
+                <div className="w-full h-screen flex items-center justify-center absolute inset-0 bg-black bg-opacity-10">
                     <div className="relative h-[80vh] bg-none flex items-end justify-center glitch">
                         <div className="relative aspect-[4/3] lg:w-[60vw] lg:max-h-[60vh] md:w-[80vw] rounded-[20px] bg-black overflow-visible w-[100vw] max-h-[40vh]">
                             {/* Logo in top left */}
